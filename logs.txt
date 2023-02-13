@@ -1,0 +1,6 @@
+New user created: cal5
+New user created: cal6
+cal failed to read messages.
+cal failed to read messages.
+cal read their messages.
+A message was sent to cal
