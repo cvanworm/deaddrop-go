@@ -4,3 +4,30 @@ cal failed to read messages.
 cal failed to read messages.
 cal read their messages.
 A message was sent to cal
+cal failed to read messages with the wrong password
+A message was sent to cal2
+Failed to read messages from a user that doesn't exist: cal10
+Failed to read messages with the wrong password for: cal2
+cal2 read their messages successfully
+A message was sent to cal3
+cal3 read their messages successfully
+A message was sent to a user that does not exist: person
+A message was sent to cal
+User tried to send a message from a user that does not exist: cal10
+A message was sent to cal
+cal2 failed to login to send a message
+User tried to send a message from a user that does not exist: Person
+cal2 sent a message was sent to cal
+cal sent a message was sent to cal2
+cal read their messages successfully
+cal is creating a new user
+cal couldn't log in while creating a new user
+cal is creating a new user
+New user created: Person
+cal is creating a new user
+cal successfully created a new user: Person2cal3 is creating a new user
+cal3 couldn't log in while creating a new user
+cal3 is creating a new user
+cal3 successfully created a new user: cal3Child
+cal3 sent a message was sent to cal3Child
+cal3Child read their messages successfully
