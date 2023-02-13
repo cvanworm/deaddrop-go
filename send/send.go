@@ -41,10 +41,10 @@ func SendMessage(to string) {
 		}
 		log.Fatalf("Unable to authenticate user")
 	}
-	
+
 	message := getUserMessage()
 	
-	if _, err := f.WriteString(username + " sent a message was sent to " + to + "\n"); err != nil {
+	if _, err := f.WriteString(username + " sent a message to " + to + "\n"); err != nil {
 		log.Println(err)
 	}
 	db.SaveMessage(message, to)

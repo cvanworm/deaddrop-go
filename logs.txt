@@ -17,8 +17,8 @@ User tried to send a message from a user that does not exist: cal10
 A message was sent to cal
 cal2 failed to login to send a message
 User tried to send a message from a user that does not exist: Person
-cal2 sent a message was sent to cal
-cal sent a message was sent to cal2
+cal2 sent a message to cal
+cal sent a message to cal2
 cal read their messages successfully
 cal is creating a new user
 cal couldn't log in while creating a new user
@@ -31,3 +31,4 @@ cal3 is creating a new user
 cal3 successfully created a new user: cal3Child
 cal3 sent a message was sent to cal3Child
 cal3Child read their messages successfully
+cal sent a message to cal3
