@@ -14,39 +14,26 @@ import (
 // SendMessage takes a destination username and will
 // prompt the user for a message to send to that user
 func SendMessage(to string) {
-	f, e := os.OpenFile("logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
-	if e != nil {
-		log.Fatalf("Error opening file: %v", e)
-	}
-	defer f.Close()
 	if !db.UserExists(to) {
-		if _, err := f.WriteString("Destination user does not exist: " + to + "\n"); err != nil {
-			log.Println(err)
-		}
+		log.Println("Destination user does not exist: " + to + "\n")
 		log.Fatalf("Destination user does not exist")
 	}
 
 	username := loginUserName()
 	if !db.UserExists(username) {
-		if _, err := f.WriteString("User tried to send a message from a user that does not exist: " + username + "\n"); err != nil {
-			log.Println(err)
-		}
+		log.Println("User tried to send a message from a user that does not exist: " + username + "\n")
 		log.Fatalf("User not recognized")
 	}
 
 	err := session.Authenticate(username)
 	if err != nil {
-		if _, err := f.WriteString(username + " failed to login to send a message\n"); err != nil {
-			log.Println(err)
-		}
+		log.Println(username + " failed to login to send a message\n")
 		log.Fatalf("Unable to authenticate user")
 	}
 
 	message := getUserMessage()
 	
-	if _, err := f.WriteString(username + " sent a message to " + to + "\n"); err != nil {
-		log.Println(err)
-	}
+	log.Println(username + " sent a message to " + to + "\n")
 	db.SaveMessage(message, to)
 }
 

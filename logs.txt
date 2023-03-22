@@ -32,3 +32,23 @@ cal3 successfully created a new user: cal3Child
 cal3 sent a message was sent to cal3Child
 cal3Child read their messages successfully
 cal sent a message to cal3
+cal2 sent a message to cal
+2023/03/22 16:09:14 cal sent a message to cal2
+
+2023/03/22 16:13:25 cal sent a message to cal2
+
+2023/03/22 16:14:04 IDEK is creating a new user
+
+2023/03/22 16:14:04 User not recognized
+2023/03/22 16:14:16 cal is creating a new user
+
+2023/03/22 16:14:30 cal successfully created a new user: IDEK
+
+2023/03/22 16:15:09 IDEK sent a message to cal
+
+2023/03/22 16:15:17 User tried to send a message from a user that does not exist: yes
+
+2023/03/22 16:15:17 User not recognized
+2023/03/22 16:15:31 IDEK failed to login to send a message
+
+2023/03/22 16:15:31 Unable to authenticate user

@@ -3,13 +3,22 @@ package main
 import (
 	"flag"
 	"fmt"
-
+	"os"
+	"log"
 	"github.com/andey-robins/deaddrop-go/new"
 	"github.com/andey-robins/deaddrop-go/read"
 	"github.com/andey-robins/deaddrop-go/send"
 )
 
 func main() {
+	file, err := os.OpenFile("logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
+    if err != nil {
+        log.Fatal(err)
+    }
+
+    log.SetOutput(file)
+	defer file.Close()
+
 	flag.Usage = func() {
 		fmt.Println("Run with -help for help information")
 	}
