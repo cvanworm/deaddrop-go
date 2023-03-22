@@ -53,14 +53,12 @@ func SendMessage(to string) {
 // getUserMessage prompts the user for the message to send
 // and returns it
 func getUserMessage() string {
-
 	fmt.Println("Enter your message: ")
 	reader := bufio.NewReader(os.Stdin)
 	text, err := reader.ReadString('\n')
 	if err != nil {
 		log.Fatalf("Error reading input: %v", err)
 	}
-
 	return text
 }
 

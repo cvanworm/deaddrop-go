@@ -3,7 +3,7 @@ package read
 import (
 	"fmt"
 	"log"
-	"os"
+
 	"github.com/andey-robins/deaddrop-go/db"
 	"github.com/andey-robins/deaddrop-go/session"
 )
