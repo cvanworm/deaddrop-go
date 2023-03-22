@@ -36,14 +36,15 @@ func GetMessagesForUser(user string) []string {
 
 // saveMessage will process the transaction to place a message
 // into the database
-func SaveMessage(message, recipient string) {
+func SaveMessage(message, recipient, sender string) {
 	database := Connect().Db
 
 	database.Exec(`
-		INSERT INTO Messages (recipient, data)
+		INSERT INTO Messages (recipient, sender, data)
 		VALUES (
-			(SELECT id FROM Users WHERE user = ?), 
+			(SELECT id FROM Users WHERE user = ?),
+			(SELECT id FROM Users WHERE user = ?),
 			?
 		);
-	`, recipient, message)
+	`, recipient, sender, message)
 }
