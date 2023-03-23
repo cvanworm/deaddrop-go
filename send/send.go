@@ -6,6 +6,9 @@ import (
 	"log"
 	"os"
 	"strings"
+	"crypto/hmac"
+    "crypto/sha256"
+    "encoding/hex"
 
 	"github.com/andey-robins/deaddrop-go/db"
 	"github.com/andey-robins/deaddrop-go/session"
@@ -33,8 +36,14 @@ func SendMessage(to string) {
 
 	message := getUserMessage()
 	
+	h := hmac.New(sha256.New, []byte(os.Getenv("KEY")))
+	h.Write([]byte(message))
+
+	hash := hex.EncodeToString(h.Sum(nil))
+
+	
 	log.Println(username + " sent a message to " + to + "\n")
-	db.SaveMessage(message, to, username)
+	db.SaveMessage(message, to, username, hash)
 }
 
 // getUserMessage prompts the user for the message to send

@@ -8,11 +8,17 @@ import (
 	"github.com/andey-robins/deaddrop-go/new"
 	"github.com/andey-robins/deaddrop-go/read"
 	"github.com/andey-robins/deaddrop-go/send"
+	"github.com/joho/godotenv"
 )
 
 func main() {
 	file, err := os.OpenFile("logs.txt", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0666)
     if err != nil {
+        log.Fatal(err)
+    }
+
+	err = godotenv.Load(".env")
+	if err != nil {
         log.Fatal(err)
     }
 
